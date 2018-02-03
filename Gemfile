@@ -58,3 +58,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
 end
+
+gem 'rails_12factor', group: :production
+#gem 'pg', group: :production
+
+#uploading of images
+gem 'carrierwave', '~> 1.0'
+#protecting passwords from aws
+gem "fog-aws"
+#resizing of images
+gem "mini_magick"
+
+gem 'devise'
+
+
