@@ -28,6 +28,11 @@
     </p>
 
     <%= link_to 'Write a Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+    <p><br/>
+      <iframe id="map" src="//www.google.com/maps/embed/v1/place?q=<%= @restaurant.address.parameterize %>
+      &zoom=17 &key=AIzaSyAo-s0skUnttfDaF1bONOTtdslnvIUbBvc">
+      </iframe>
+    </p>
     <p>
       <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-link" %> |
       <%= link_to 'Back', restaurants_path, class:"btn btn-link" %>
