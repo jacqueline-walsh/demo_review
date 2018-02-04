@@ -10,7 +10,7 @@
     </p>
 
       <div class="star-rating" data-score= <%= @avg_rating %> ></div>
-      <p><%= "#{@reviews.length} reviews" %></p>
+        <p><%= "#{@reviews.length} reviews" %></p>
 
     <p>
       <strong>Address:</strong>
@@ -37,14 +37,23 @@
 
     <table class="table">
       <tbody>
-      <% @reviews.each do | review | %>  
+
+        <% @reviews.each do | review | %>  
+
         <tr>
+          <td>
+            <h4><%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}."%></h4>
+            <p><%= review.created_at.strftime("%d/%m/%y") %></p>
+          </td>
+
           <td>
             <div class="star-rating" data-score= <%= review.rating %> ></div>
             <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>            
           </td>
         </tr>
-      <% end %>      
+
+      <% end %>
+
       </tbody>
     </table>
     <% end %>
